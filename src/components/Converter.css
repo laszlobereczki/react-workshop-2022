@@ -1,0 +1,8 @@
+p, input, select {
+    margin: 0 5px;
+}
+
+div {
+    padding-left: 10px;
+    padding-top: 10px;
+}
