@@ -5,7 +5,6 @@ import './Converter.css'
 const BTC_EXCHR = 995
 const ETH_EXCHR = 1.2
 
-
 export default function Converter(props) {
 
     const [cryptoName, setCryptoName] = useState('BTC');
@@ -19,8 +18,13 @@ export default function Converter(props) {
     return (
         <div style={{...{display: 'flex'}}}>
             <p style={{...{display: 'inline', margin: '0'}}}>Euro value: </p>
-            <input defaultValue={0} type='number' label='Euros'
-                   onChange={(e) => setEuroValue(Number(e.target.value))}/>
+            <input defaultValue={0}
+                   type='number' label='Euros'
+                   onChange={(e) => {
+                       if (e.target.value === '') e.target.value = '0';
+                       setEuroValue(Number(e.target.value))
+                   }
+                   }/>
             <p style={{...{display: 'inline'}}}> | </p>
             <select
                 name="crypto"

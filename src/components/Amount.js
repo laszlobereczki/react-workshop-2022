@@ -7,10 +7,9 @@ export default function Amount(props) {
     const myStyle = (props.value < 0) ? {color: "red"} : {color: theme.color}
 
     return (
-        <p style={{...myStyle}}>{props.message}{props.value}</p>
+        <p style={{...myStyle}}>{props.value} {props.message}</p>
     );
 }
-
 
 /* Notes:
     return <p className={theme} style={myStyle}>{props.message}{props.value}</p>;

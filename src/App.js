@@ -1,6 +1,5 @@
 import './App.css';
-import React, {useContext, useEffect, useState} from "react";
-import Amount from "./components/Amount";
+import React, { useState } from "react";
 import ThemeContext, {themes} from "./ThemeContext";
 import Converter from "./components/Converter";
 
@@ -15,9 +14,8 @@ function App() {
         <ThemeContext.Provider value={theme}>
             <div className={'App ' + theme} style={theme}>
                 <button className='themeButton' onClick={toggleTheme} style={{...theme, ...{ position: "absolute", right:"0vh"}}}>light/dark</button>
-                <Converter cryptoName='A' exchangeRate='B'/>
-                <Converter cryptoName='A' exchangeRate='B'/>
-                <Converter cryptoName='A' exchangeRate='B'/>
+                <Converter />
+                <Converter />
             </div>
         </ThemeContext.Provider>
     );

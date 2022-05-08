@@ -12,5 +12,4 @@ export const themes = {
 };
 
 export const ThemeContext = createContext(themes.dark);
-
 export default ThemeContext;
