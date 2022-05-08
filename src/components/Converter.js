@@ -15,6 +15,10 @@ export default function Converter(props) {
         return (euroValue * exchangeRate).toFixed(2);
     }
 
+    function increasePremiumCount(currentPremiumCount) {
+        return (currentPremiumCount === 5) ? 1 : currentPremiumCount+1
+    }
+
     return (
         <div style={{...{display: 'flex'}}}>
             <p style={{...{display: 'inline', margin: '0'}}}>Euro value: </p>
@@ -23,6 +27,7 @@ export default function Converter(props) {
                    onChange={(e) => {
                        if (e.target.value === '') e.target.value = '0';
                        setEuroValue(Number(e.target.value))
+                       props.setPremiumCount(increasePremiumCount(props.premiumCount));
                    }
                    }/>
             <p style={{...{display: 'inline'}}}> | </p>
